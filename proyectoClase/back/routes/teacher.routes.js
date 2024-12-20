@@ -1,13 +1,15 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 
+const teacherController = require("../controllers/teacher.controller");
 
-router.get('/list', function(request, response) {
-    const result = teacherController.getList();
-    response.status(200).json({
+/* POST METHOD TEACHER USER. */
+router.get("/list", function (response) {
+  const result = teacherController.getList();
+  response.status(200).json({
     data: result,
     status: true,
-    message: "VIVA EL REAL MADRID",
+    message: "TODO ESTA OK ",
   });
 });
 

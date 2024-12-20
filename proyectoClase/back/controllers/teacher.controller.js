@@ -5,6 +5,6 @@ const getList = async () => {
     return result;
 };
 
-modelTeacher.exports = {
+module.exports = {
     getList,
 }; 
