@@ -4,8 +4,8 @@ var router = express.Router();
 const teacherController = require("../controllers/teacher.controller");
 
 /* POST METHOD TEACHER USER. */
-router.get("/list", function (request, response) {
-  const result = teacherController.getList();
+router.post("/list", function (request, response) {
+  const result = teacherController.postList();
   response.status(200).json({
     data: result,
     status: true,

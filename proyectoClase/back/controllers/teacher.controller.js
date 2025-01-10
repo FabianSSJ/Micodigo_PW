@@ -1,6 +1,6 @@
 const modelTeacher = require("../models/teacher.models");
 
-const getList = async () => {
+const postList = async () => {
     const result = await modelTeacher.findAll();
     return result;
 };
@@ -21,7 +21,7 @@ const postDelete = async (data) => {
 };
 
 module.exports = {
-    getList,
+    postList,
     postCreate,
     postUpdate,
     postDelete,
