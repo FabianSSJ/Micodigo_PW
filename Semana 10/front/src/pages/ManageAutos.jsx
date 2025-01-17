@@ -97,7 +97,7 @@ const ManageAutos = () => {
           variant="outlined"
           required
         />
-        <Button variant="outlined" color="primary" type="submit">
+        <Button variant="contained" color="primary" type="submit">
           {isEditing ? "Actualizar" : "Registrar"}
         </Button>
       </form>
@@ -123,10 +123,10 @@ const ManageAutos = () => {
                 <TableCell>{auto.nengine}</TableCell>
                 <TableCell>{auto.model}</TableCell>
                 <TableCell>
-                  <Button variant="contained" color="warning" onClick={() => handleEdit(auto)}>
+                  <Button variant="outlined" color="warning" onClick={() => handleEdit(auto)}>
                     Editar
                   </Button>
-                  <Button variant="contained" color="error" onClick={() => handleDelete(auto.id)}>
+                  <Button variant="outlined" color="error" onClick={() => handleDelete(auto.id)}>
                     Eliminar
                   </Button>
                 </TableCell>
