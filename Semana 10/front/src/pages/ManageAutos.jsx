@@ -5,6 +5,7 @@ import { TextField, Button, Table, TableBody, TableCell, TableContainer, TableHe
 const ManageAutos = () => {
   const [autos, setAutos] = useState([]);
   const [formData, setFormData] = useState({
+    number: "",
     brand: "",
     npassengers: "",
     color: "",
@@ -37,7 +38,7 @@ const ManageAutos = () => {
     } else {
       await createAuto(formData);
     }
-    setFormData({ brand: "", npassengers: "", color: "", nengine: "", model: "" });
+    setFormData({ id:"", brand: "", npassengers: "", color: "", nengine: "", model: "" });
     fetchAutos();
   };
 
@@ -56,6 +57,14 @@ const ManageAutos = () => {
     <div style={{ padding: "2rem" }}>
       <h1>Gestión de Autos</h1>
       <form onSubmit={handleSubmit} style={{ display: "flex", gap: "1rem", marginBottom: "2rem" }}>
+      <TextField
+          label="Number"
+          name="number"
+          value={formData.number}
+          onChange={handleChange}
+          variant="outlined"
+          required
+        />
         <TextField
           label="Marca"
           name="brand"
@@ -106,6 +115,8 @@ const ManageAutos = () => {
         <Table>
           <TableHead>
             <TableRow>
+            <TableCell>Numero</TableCell>
+            <TableCell>ID</TableCell>
               <TableCell>Marca</TableCell>
               <TableCell>Pasajeros</TableCell>
               <TableCell>Color</TableCell>
@@ -117,7 +128,11 @@ const ManageAutos = () => {
           <TableBody>
             {autos.map((auto) => (
               <TableRow key={auto.id}>
-                <TableCell>{auto.brand}</TableCell>
+                <TableCell>{auto.number}</TableCell>
+                <TableCell>{auto.id}</TableCell>
+                <TableCell>
+                  <Button variant="outlined" color="error">{auto.brand}</Button>
+                </TableCell>
                 <TableCell>{auto.npassengers}</TableCell>
                 <TableCell>{auto.color}</TableCell>
                 <TableCell>{auto.nengine}</TableCell>
