@@ -11,7 +11,10 @@ const configs = {
             update: "/teacher/update",
             delete: "/teacher/delete",
         },
+    initial: {
+        login: "/initial/login",
+        },
     },
 };
 
-export default configs;
+export default configs
